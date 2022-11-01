@@ -1,0 +1,23 @@
+# ------------------------------------------------------------------------------
+# Shared editor configuration - http://editorconfig.org
+#
+# To have this file apply in VSCode:
+#
+# 1. Install the "EditorConfig for VSCode" extension.
+# 2. Change the "Editor: Default Formatter" setting to the extension above.
+# 3. Enable the "Editor: Format On Save" setting.
+# ------------------------------------------------------------------------------
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
