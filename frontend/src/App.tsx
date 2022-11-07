@@ -1,4 +1,3 @@
-import './App.css';
 import { createContext } from 'react';
 import { ProjectsSection } from './components/sections/Projects';
 import { SplashSection } from './components/sections/Splash';
