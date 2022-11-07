@@ -1,6 +1,10 @@
-import { createContext } from 'react';
 import './App.css';
+import { createContext } from 'react';
+import { ProjectsSection } from './components/sections/Projects';
+import { SplashSection } from './components/sections/Splash';
 import { useViewMode, ViewMode } from './hooks/useViewMode';
+import { ContactSection } from './components/sections/Contact';
+import { BioSection } from './components/sections/Bio';
 
 function App() {
   const GlobalContext = createContext(ViewMode.Desktop);
@@ -8,7 +12,10 @@ function App() {
 
   return (
     <GlobalContext.Provider value={viewMode}>
-      <div></div>
+      <SplashSection />
+      <BioSection />
+      <ProjectsSection />
+      <ContactSection />
     </GlobalContext.Provider>
   );
 }
