@@ -1,9 +1,6 @@
 import { FC } from 'react';
+import { Section } from '../../common/styles';
 
 export const SplashSection: FC = () => {
-  return (
-    <div id='splash' className='section'>
-      Splash Section
-    </div>
-  );
+  return <Section id='splash'>Splash Section</Section>;
 };

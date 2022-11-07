@@ -7,4 +7,8 @@ export const Section = styled.div`
   @media (max-width: ${ViewMode.Mobile}) {
     height: 100vh;
   }
+
+  &#projects {
+    height: 100vh;
+  }
 `;

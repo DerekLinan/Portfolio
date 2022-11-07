@@ -1,9 +1,6 @@
 import { FC } from 'react';
+import { Section } from '../../common/styles';
 
 export const BioSection: FC = () => {
-  return (
-    <div id='bio' className='section'>
-      Bio Section
-    </div>
-  );
+  return <Section id='bio'>Bio Section</Section>;
 };

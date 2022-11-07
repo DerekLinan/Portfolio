@@ -1,9 +1,6 @@
 import { FC } from 'react';
+import { Section } from '../../common/styles';
 
 export const ContactSection: FC = () => {
-  return (
-    <div id='contact' className='section'>
-      Contact Section
-    </div>
-  );
+  return <Section id='contact'>Contact Section</Section>;
 };
