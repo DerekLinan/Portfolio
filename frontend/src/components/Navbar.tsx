@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import { FolderCopy, Email } from '@mui/icons-material';
+import { ScrollTo } from '../common/utils';
 
 const NavWrapper = styled.div`
   position: fixed;
@@ -37,16 +38,15 @@ const NavButton = styled.button`
 `;
 
 export const Navbar: FC = () => {
-  let i = 0;
   return (
     <NavWrapper>
-      <NavButton onClick={() => (i += 1)}>
+      <NavButton onClick={() => ScrollTo('projects')}>
         <div>
           <FolderCopy />
           Projects
         </div>
       </NavButton>
-      <NavButton>
+      <NavButton onClick={() => ScrollTo('contact')}>
         <div>
           <Email />
           Contact
