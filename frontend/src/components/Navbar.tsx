@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FolderCopy, Email } from '@mui/icons-material';
 import { ScrollTo } from '../common/utils';
 
-const NavWrapper = styled.div`
+const NavWrapper = styled.nav`
   position: fixed;
   display: flex;
   flex-direction: column;
