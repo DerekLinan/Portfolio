@@ -6,6 +6,7 @@ import { ContactSection } from './components/sections/Contact';
 import { BioSection } from './components/sections/Bio';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, defaultTheme } from './common/colors';
+import { Navbar } from './components/Navbar';
 
 function App() {
   const GlobalContext = createContext(ViewMode.Desktop);
@@ -20,6 +21,7 @@ function App() {
     <GlobalContext.Provider value={viewMode}>
       <button onClick={ToggleTheme}>Toggle Theme</button>
       <ThemeProvider theme={theme}>
+        <Navbar />
         <SplashSection />
         <BioSection />
         <ProjectsSection />
