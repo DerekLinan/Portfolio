@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Constants } from '../common/constants';
+import { VIEW_BREAKPOINTS } from '../common/constants';
 
 export enum ViewMode {
   Mobile,
@@ -10,11 +10,11 @@ export enum ViewMode {
 
 function CalculateViewMode(windowWidth: number): ViewMode {
   let viewMode: ViewMode;
-  if (windowWidth <= Constants.viewBreakpoints.MOBILE) {
+  if (windowWidth <= VIEW_BREAKPOINTS.MOBILE) {
     viewMode = ViewMode.Mobile;
-  } else if (windowWidth <= Constants.viewBreakpoints.TABLET) {
+  } else if (windowWidth <= VIEW_BREAKPOINTS.TABLET) {
     viewMode = ViewMode.Tablet;
-  } else if (windowWidth <= Constants.viewBreakpoints.DESKTOP) {
+  } else if (windowWidth <= VIEW_BREAKPOINTS.DESKTOP) {
     viewMode = ViewMode.Desktop;
   } else {
     viewMode = ViewMode.Quad;
