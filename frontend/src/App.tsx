@@ -1,9 +1,9 @@
 import { createContext, useState } from 'react';
+import { useViewMode, ViewMode } from './hooks/useViewMode';
 import { ProjectsSection } from './components/sections/Projects';
 import { SplashSection } from './components/sections/Splash';
-import { useViewMode, ViewMode } from './hooks/useViewMode';
-import { ContactSection } from './components/sections/Contact';
 import { BioSection } from './components/sections/Bio';
+import { ContactSection } from './components/sections/Contact';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, defaultTheme } from './common/colors';
 import { Navbar } from './components/Navbar';
