@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { useViewMode, ViewMode } from './hooks/useViewMode';
 import { ProjectsSection } from './components/sections/Projects';
 import { SplashSection } from './components/sections/Splash';
@@ -16,6 +16,10 @@ function App() {
   function ToggleTheme(): void {
     setTheme(prevTheme => (prevTheme === defaultTheme ? darkTheme : defaultTheme));
   }
+
+  useEffect(() => {
+    document.body.style.backgroundColor = theme.bg;
+  }, [theme]);
 
   return (
     <GlobalContext.Provider value={viewMode}>
