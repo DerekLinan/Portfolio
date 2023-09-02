@@ -23,9 +23,8 @@ function App() {
 
   return (
     <GlobalContext.Provider value={viewMode}>
-      <button onClick={ToggleTheme}>Toggle Theme</button>
       <ThemeProvider theme={theme}>
-        <Navbar />
+        <Navbar isLightMode={theme == defaultTheme} toggleTheme={ToggleTheme} />
         <SplashSection />
         <BioSection />
         <ProjectsSection />

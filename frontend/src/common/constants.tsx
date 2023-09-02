@@ -11,3 +11,10 @@ export const STRING_BREAKPOINTS = {
   DESKTOP: VIEW_BREAKPOINTS.DESKTOP + 'px',
   QUAD: VIEW_BREAKPOINTS.QUAD + 'px',
 };
+
+export const URLS = {
+  LINKEDIN: 'https://www.linkedin.com/in/derek-l-33716621b',
+  GITHUB: 'https://github.com/DerekLinan',
+};
+
+export const THEMES = ['light', 'dark'];

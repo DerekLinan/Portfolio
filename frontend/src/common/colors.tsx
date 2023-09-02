@@ -1,4 +1,7 @@
+import { THEMES } from './constants';
+
 export type Theme = {
+  name: string;
   primary: string;
   primaryAlt: string;
   secondary: string;
@@ -10,6 +13,7 @@ export type Theme = {
 };
 
 export const defaultTheme: Theme = {
+  name: THEMES[0],
   primary: '#0657a3',
   primaryAlt: '#0084ff',
   secondary: '#095e5e',
@@ -21,6 +25,7 @@ export const defaultTheme: Theme = {
 };
 
 export const darkTheme: Theme = {
+  name: THEMES[1],
   primary: '#3094e6',
   primaryAlt: '#005fad',
   secondary: '#7476e2',
