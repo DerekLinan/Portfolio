@@ -11,7 +11,9 @@ import { Navbar } from './components/Navbar';
 function App() {
   const GlobalContext = createContext(ViewMode.Desktop);
   const viewMode = useViewMode();
-  const [theme, setTheme] = useState(defaultTheme);
+  const [theme, setTheme] = useState(
+    window?.matchMedia?.('(prefers-color-scheme:dark)')?.matches ? darkTheme : defaultTheme,
+  );
 
   function ToggleTheme(): void {
     setTheme(prevTheme => (prevTheme === defaultTheme ? darkTheme : defaultTheme));
