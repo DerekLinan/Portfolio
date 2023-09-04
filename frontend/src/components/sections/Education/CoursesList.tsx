@@ -5,6 +5,7 @@ import { UDEMYCOURSES } from '../../../data/courses/Udemy';
 import { UdemyCourseCard } from './UdemyCourseCard';
 import styled, { css } from 'styled-components';
 import { STRING_BREAKPOINTS } from '../../../common/constants';
+import React from 'react';
 
 enum CourseTypes {
   All = 'All',
@@ -19,6 +20,7 @@ const borderColor = css`
 
 const Header = styled.div`
   display: flex;
+  padding-top: 4px;
   gap: 8px;
 
   h2 {
@@ -42,7 +44,9 @@ const FilterPanel = styled.div`
   z-index: 2;
 
   @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
+    margin-left: calc(${border.radius} * 2);
     overflow-x: auto;
+    overflow-y: hidden;
   }
 
   align-items: end;
@@ -80,13 +84,17 @@ const FilterPanel = styled.div`
   }
 `;
 
-const CourseContainer = styled.div`
+const CourseBorder = styled.div`
   ${borderColor}
   border: ${border.thickness} ${border.style};
   border-radius: ${border.radius};
+  padding: 12px 2px;
+`;
+
+const CourseContainer = styled.div`
+  padding: 0 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
-  padding: 8px 4px;
   gap: 4px;
   overflow: auto;
   direction: rtl;
@@ -111,7 +119,7 @@ export const CoursesList: FC = () => {
   function CreateFilterButton(courseType: CourseTypes) {
     const name = courseType.toString();
     return (
-      <>
+      <React.Fragment key={name}>
         <input
           type='radio'
           name='filter'
@@ -121,7 +129,7 @@ export const CoursesList: FC = () => {
           checked={activeFilter === courseType}
         />
         <label htmlFor={name}>{name}</label>
-      </>
+      </React.Fragment>
     );
   }
 
@@ -151,32 +159,46 @@ export const CoursesList: FC = () => {
         </FilterPanel>
       </Header>
 
-      <CourseContainer>
-        {[...UdemyCourses, ...CourseraCourses]
-          .sort((a, b) => b.date.getTime() - a.date.getTime())
-          .filter(course => activeFilter === CourseTypes.All || course.courseType === activeFilter)
-          .map(course => course.element)}
-        {[...UdemyCourses, ...CourseraCourses]
-          .sort((a, b) => b.date.getTime() - a.date.getTime())
-          .filter(course => activeFilter === CourseTypes.All || course.courseType === activeFilter)
-          .map(course => course.element)}
-        {[...UdemyCourses, ...CourseraCourses]
-          .sort((a, b) => b.date.getTime() - a.date.getTime())
-          .filter(course => activeFilter === CourseTypes.All || course.courseType === activeFilter)
-          .map(course => course.element)}
-        {[...UdemyCourses, ...CourseraCourses]
-          .sort((a, b) => b.date.getTime() - a.date.getTime())
-          .filter(course => activeFilter === CourseTypes.All || course.courseType === activeFilter)
-          .map(course => course.element)}
-        {[...UdemyCourses, ...CourseraCourses]
-          .sort((a, b) => b.date.getTime() - a.date.getTime())
-          .filter(course => activeFilter === CourseTypes.All || course.courseType === activeFilter)
-          .map(course => course.element)}
-        {[...UdemyCourses, ...CourseraCourses]
-          .sort((a, b) => b.date.getTime() - a.date.getTime())
-          .filter(course => activeFilter === CourseTypes.All || course.courseType === activeFilter)
-          .map(course => course.element)}
-      </CourseContainer>
+      <CourseBorder>
+        <CourseContainer>
+          {[...UdemyCourses, ...CourseraCourses]
+            .sort((a, b) => b.date.getTime() - a.date.getTime())
+            .filter(
+              course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
+            )
+            .map(course => course.element)}
+          {[...UdemyCourses, ...CourseraCourses]
+            .sort((a, b) => b.date.getTime() - a.date.getTime())
+            .filter(
+              course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
+            )
+            .map(course => course.element)}
+          {[...UdemyCourses, ...CourseraCourses]
+            .sort((a, b) => b.date.getTime() - a.date.getTime())
+            .filter(
+              course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
+            )
+            .map(course => course.element)}
+          {[...UdemyCourses, ...CourseraCourses]
+            .sort((a, b) => b.date.getTime() - a.date.getTime())
+            .filter(
+              course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
+            )
+            .map(course => course.element)}
+          {[...UdemyCourses, ...CourseraCourses]
+            .sort((a, b) => b.date.getTime() - a.date.getTime())
+            .filter(
+              course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
+            )
+            .map(course => course.element)}
+          {[...UdemyCourses, ...CourseraCourses]
+            .sort((a, b) => b.date.getTime() - a.date.getTime())
+            .filter(
+              course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
+            )
+            .map(course => course.element)}
+        </CourseContainer>
+      </CourseBorder>
     </div>
   );
 };
