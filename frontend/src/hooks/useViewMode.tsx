@@ -28,11 +28,16 @@ export const useViewMode = (): ViewMode => {
 
   useEffect(() => {
     function handleResize() {
-      setViewMode(CalculateViewMode(window.innerWidth));
+      const newView = CalculateViewMode(window.innerWidth);
+      if (String(viewMode) !== String(newView)) {
+        setViewMode(newView);
+      }
     }
     window.addEventListener('resize', handleResize);
     handleResize();
     return () => window.removeEventListener('resize', handleResize);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return viewMode;
 };
