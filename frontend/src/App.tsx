@@ -1,8 +1,8 @@
 import { createContext, useEffect, useState } from 'react';
 import { useViewMode, ViewMode } from './hooks/useViewMode';
 import { ProjectsSection } from './components/sections/Projects';
-import { SplashSection } from './components/sections/Splash';
 import { BioSection } from './components/sections/Bio';
+import { EducationSection } from './components/sections/Education';
 import { ContactSection } from './components/sections/Contact';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, defaultTheme } from './common/colors';
@@ -27,8 +27,8 @@ function App() {
     <GlobalContext.Provider value={viewMode}>
       <ThemeProvider theme={theme}>
         <Navbar isLightMode={theme == defaultTheme} toggleTheme={ToggleTheme} />
-        <SplashSection />
         <BioSection />
+        <EducationSection />
         <ProjectsSection />
         <ContactSection />
       </ThemeProvider>

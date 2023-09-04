@@ -6,6 +6,7 @@ import {
   FolderCopy,
   Email,
   GitHub,
+  School,
   Person,
   LinkedIn,
   ExitToApp,
@@ -191,6 +192,12 @@ export const Navbar: FC<Props> = ({ isLightMode, toggleTheme }) => {
         <div>
           <Person />
           Bio
+        </div>
+      </NavButton>
+      <NavButton onClick={() => ScrollTo('education')}>
+        <div>
+          <School />
+          Education
         </div>
       </NavButton>
       <NavButton onClick={() => ScrollTo('projects')}>

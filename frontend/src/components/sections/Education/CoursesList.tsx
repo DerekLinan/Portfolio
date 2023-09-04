@@ -90,7 +90,7 @@ const CourseContainer = styled.div`
   gap: 4px;
   overflow: auto;
   direction: rtl;
-  max-height: 90vh;
+  max-height: 80vh;
   z-index: 1;
 
   @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
