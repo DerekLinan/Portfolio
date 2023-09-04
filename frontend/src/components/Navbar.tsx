@@ -11,7 +11,7 @@ import {
   LinkedIn,
   ExitToApp,
   KeyboardArrowLeft,
-  Close,
+  Remove,
 } from '@mui/icons-material';
 import { ScrollTo } from '../common/utils';
 import { URLS } from '../common/constants';
@@ -100,14 +100,24 @@ const ThemeSelector = styled.div`
   flex-direction: column;
   align-items: center;
 
-  span.MuiSwitch-thumb {
-    color: ${props => props.theme.primary};
-    color: grey;
+  .darkMode {
+    span.MuiSwitch-thumb {
+      color: ${props => props.theme.primary};
+    }
+
+    span.MuiSwitch-track {
+      background-color: ${props => props.theme.primaryAlt};
+    }
   }
 
-  .MuiSwitch-root > span.MuiSwitch-track {
-    background-color: ${props => props.theme.primaryAlt};
-    background-color: lightgray;
+  .lightMode {
+    span.MuiSwitch-thumb {
+      color: #0084ff;
+    }
+
+    span.MuiSwitch-track {
+      background-color: #3094e6;
+    }
   }
 `;
 
@@ -178,10 +188,11 @@ export const Navbar: FC<Props> = ({ isLightMode, toggleTheme }) => {
   return (
     <NavWrapper>
       <CloseNavButton title={'close nav menu'} onClick={() => toggleMenu()}>
-        <Close />
+        <Remove />
       </CloseNavButton>
       <ThemeSelector title={`change to ${isLightMode ? 'dark' : 'light'} theme`}>
         <Switch
+          className={isLightMode ? 'lightMode' : 'darkMode'}
           key={isLightMode ? 'light' : 'dark'}
           checked={!isLightMode}
           onChange={toggleTheme}
