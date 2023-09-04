@@ -7,6 +7,10 @@ html {
   padding: 0;
 }
 
+h2 {
+  font-size: xx-large;
+}
+
 body {
   margin: 0;
   padding: 8px;

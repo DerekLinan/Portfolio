@@ -6,6 +6,8 @@ import { STRING_BREAKPOINTS } from '../../../common/constants';
 import LinkIcon from '@mui/icons-material/Link';
 
 const Card = styled.div`
+  direction: ltr;
+
   background-color: ${props => props.theme.primary};
   padding: 12px;
   border-radius: 12px;

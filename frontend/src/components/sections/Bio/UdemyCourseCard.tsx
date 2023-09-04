@@ -6,6 +6,8 @@ import LinkIcon from '@mui/icons-material/Link';
 import { UdemyCourse } from '../../../data/courses/Udemy';
 
 const Card = styled.div`
+  direction: ltr;
+
   background-color: ${props => props.theme.primary};
   padding: 12px;
   border-radius: 12px;
