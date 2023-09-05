@@ -6,12 +6,18 @@ import styled from 'styled-components';
 import { STRING_BREAKPOINTS } from '../../../common/constants';
 
 const StyledEducation = styled(Section)`
+  margin: 1rem;
   display: flex;
   flex-direction: column;
 
+  @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
+    text-align: center;
+  }
+
   .container {
+    flex: 1 1 0;
     display: flex;
-    gap: 12px;
+    gap: 1rem;
 
     @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
       flex-direction: column;
@@ -22,12 +28,8 @@ const StyledEducation = styled(Section)`
 export const EducationSection: FC = () => {
   return (
     <StyledEducation id='education'>
-      <h1>At a glance...</h1>
+      <h1>Education</h1>
       <div className='container'>
-        <ul>
-          <li>Full-stack Web Development</li>
-          <li>Game Development</li>
-        </ul>
         <CertificationsList />
         <CoursesList />
       </div>

@@ -15,7 +15,7 @@ export const COURSERACOURSES: CourseraCourses = {
   courses: [
     {
       name: 'Introduction to Software Engineering',
-      date: new Date(2023, 8),
+      date: new Date(2023, 7, 18),
       company: 'IBM',
       companyImage: 'ibm-logo.svg',
       credentialID: 'DLBUPB72KUXR',
@@ -25,7 +25,7 @@ export const COURSERACOURSES: CourseraCourses = {
     },
     {
       name: 'Hands-on Introduction to Linux Commands and Shell Scripting',
-      date: new Date(2023, 8),
+      date: new Date(2023, 7, 27),
       company: 'IBM',
       companyImage: 'ibm-logo.svg',
       credentialID: 'LM4LBYDAZNL7',

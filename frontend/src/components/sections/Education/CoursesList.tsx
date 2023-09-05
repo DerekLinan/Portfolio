@@ -18,12 +18,20 @@ const borderColor = css`
   border-color: ${props => props.theme.fg};
 `;
 
+const Wrapper = styled.div`
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+`;
+
 const Header = styled.div`
   display: flex;
-  padding-top: 4px;
+  flex-direction: column;
   gap: 8px;
 
   h2 {
+    text-align: center;
     padding-bottom: 8px;
   }
 
@@ -36,7 +44,7 @@ const Header = styled.div`
 const FilterPanel = styled.div`
   ${borderColor}
   border-bottom: ${border.thickness} ${border.style};
-  margin-right: calc(${border.radius} * 2);
+  margin: 0 calc(${border.radius} * 2);
   margin-bottom: -${border.thickness};
   gap: 8px;
   display: flex;
@@ -69,11 +77,15 @@ const FilterPanel = styled.div`
     font-weight: bold;
     font-size: large;
     cursor: pointer;
+
+    @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
+      padding: 3px;
+    }
   }
 
   label:hover {
     color: ${props => props.theme.secondaryAlt};
-    padding-bottom: 12px;
+    padding-bottom: 8px;
   }
 
   input[type='radio']:checked + label {
@@ -81,10 +93,19 @@ const FilterPanel = styled.div`
     border-bottom: ${props => props.theme.bg};
     padding-bottom: 12px;
     cursor: default;
+
+    @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
+      background-color: ${props => props.theme.fg};
+      color: ${props => props.theme.bg};
+    }
   }
 `;
 
 const CourseBorder = styled.div`
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+
   ${borderColor}
   border: ${border.thickness} ${border.style};
   border-radius: ${border.radius};
@@ -92,19 +113,22 @@ const CourseBorder = styled.div`
 `;
 
 const CourseContainer = styled.div`
+  margin-bottom: auto;
+  flex: 1 1 0;
+
   padding: 0 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(475px, 1fr));
+  grid-template-rows: repeat(auto-fit, 135px);
   gap: 4px;
   overflow: auto;
-  direction: rtl;
-  max-height: 80vh;
   z-index: 1;
 
   @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
     display: flex;
     flex-direction: column;
     max-height: 50vh;
+    flex: 0 0 auto;
   }
 `;
 
@@ -112,7 +136,6 @@ export const CoursesList: FC = () => {
   const [activeFilter, changeFilter] = useState<CourseTypes>(CourseTypes.All);
 
   function handleFilterChange(e: ChangeEvent<HTMLInputElement>) {
-    console.log('changed to ' + e.target.value);
     changeFilter(e.target.value as CourseTypes);
   }
 
@@ -149,7 +172,7 @@ export const CoursesList: FC = () => {
   });
 
   return (
-    <div style={{ flexGrow: 1 }}>
+    <Wrapper>
       <Header>
         <h2>Completed Courses</h2>
         <FilterPanel>
@@ -167,38 +190,8 @@ export const CoursesList: FC = () => {
               course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
             )
             .map(course => course.element)}
-          {[...UdemyCourses, ...CourseraCourses]
-            .sort((a, b) => b.date.getTime() - a.date.getTime())
-            .filter(
-              course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
-            )
-            .map(course => course.element)}
-          {[...UdemyCourses, ...CourseraCourses]
-            .sort((a, b) => b.date.getTime() - a.date.getTime())
-            .filter(
-              course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
-            )
-            .map(course => course.element)}
-          {[...UdemyCourses, ...CourseraCourses]
-            .sort((a, b) => b.date.getTime() - a.date.getTime())
-            .filter(
-              course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
-            )
-            .map(course => course.element)}
-          {[...UdemyCourses, ...CourseraCourses]
-            .sort((a, b) => b.date.getTime() - a.date.getTime())
-            .filter(
-              course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
-            )
-            .map(course => course.element)}
-          {[...UdemyCourses, ...CourseraCourses]
-            .sort((a, b) => b.date.getTime() - a.date.getTime())
-            .filter(
-              course => activeFilter === CourseTypes.All || course.courseType === activeFilter,
-            )
-            .map(course => course.element)}
         </CourseContainer>
       </CourseBorder>
-    </div>
+    </Wrapper>
   );
 };

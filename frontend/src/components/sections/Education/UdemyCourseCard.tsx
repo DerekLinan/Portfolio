@@ -4,14 +4,7 @@ import styled from 'styled-components';
 import { STRING_BREAKPOINTS } from '../../../common/constants';
 import LinkIcon from '@mui/icons-material/Link';
 import { UdemyCourse } from '../../../data/courses/Udemy';
-
-const Card = styled.div`
-  direction: ltr;
-
-  background-color: ${props => props.theme.primary};
-  padding: 12px;
-  border-radius: 12px;
-`;
+import { ClassCard } from '../../../common/styles';
 
 const Title = styled.div`
   display: flex;
@@ -29,25 +22,32 @@ const Body = styled.div`
 `;
 
 const Image = styled.div`
-  padding-right: 8px;
+  margin-right: 12px;
+  aspect-ratio: 1;
+
+  box-shadow: 3px 3px #a435f0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
 
   img {
-    width: 128px;
+    padding: 4px;
+    width: 120px;
     @media (max-width: ${STRING_BREAKPOINTS.QUAD}) {
       color: green;
-      width: 76px;
+      width: 68px;
     }
     @media (max-width: ${STRING_BREAKPOINTS.DESKTOP}) {
       color: yellow;
-      width: 64px;
+      width: 56px;
     }
     @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
       color: red;
-      width: 48px;
+      width: 40px;
     }
     @media (max-width: ${STRING_BREAKPOINTS.MOBILE}) {
       color: blue;
-      width: 36px;
+      width: 28px;
     }
   }
 `;
@@ -81,7 +81,7 @@ export const UdemyCourseCard: FC<{ course: UdemyCourse }> = ({ course }) => {
   const { name, date, courseURL } = course;
 
   return (
-    <Card>
+    <ClassCard>
       <Title>
         <Image title='Udemy'>
           <img src='udemy-logo.svg' alt={'Udemy logo'} />
@@ -104,6 +104,6 @@ export const UdemyCourseCard: FC<{ course: UdemyCourse }> = ({ course }) => {
         </a>
         <p>from Udemy</p>
       </Footer>
-    </Card>
+    </ClassCard>
   );
 };

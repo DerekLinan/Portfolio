@@ -2,15 +2,11 @@ import { FC } from 'react';
 import { Certification } from '../../../data/certifications/types';
 import { ToLocaleDateString } from '../../../common/utils';
 import styled from 'styled-components';
+import { CertCard } from '../../../common/styles';
 
-const Card = styled.div`
-  display: flex;
-  gap: 12px;
-  box-shadow: 4px 4px 10px ${props => props.theme.secondaryAlt};
-  padding: 12px;
-  max-width: 20rem;
-  border-radius: 4px;
+const Card = styled(CertCard)`
   background-color: #e4eef1;
+  position: relative;
 
   > div:first-child {
     display: flex;
@@ -37,7 +33,8 @@ const Card = styled.div`
 
   .bar {
     background-color: ${props => props.theme.secondary};
-    margin-top: 8px;
+    margin-top: auto;
+    margin-bottom: 1rem;
     margin-right: 32px;
     height: 8px;
     border-radius: 4px;
@@ -107,14 +104,46 @@ const CertC = styled.div`
   }
 `;
 
-export const CertificationCard: FC<{ cert: Certification }> = ({ cert }) => {
+const ProgressBanner = styled.div`
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+
+  & > div {
+    width: 200px;
+    padding: 15px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    transform: translate(-8%, 65%) rotate(45deg);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+  }
+`;
+
+export const CertificationCard: FC<{ cert: Certification; inProgress?: boolean }> = ({
+  cert,
+  inProgress,
+}) => {
   const { name, date, issuer, image } = cert;
   return (
     <Card>
       <div>
         <div className='name-div'>{name}</div>
-        <div className='date-div'>{ToLocaleDateString(date)}</div>
+        <div className='date-div'>{inProgress ? 'Not yet complete' : ToLocaleDateString(date)}</div>
         <div className='issuer-div'>{issuer}</div>
+        <div
+          className='bar'
+          style={{
+            marginBottom: '0',
+            marginRight: '5rem',
+            marginLeft: '1.5rem',
+          }}
+        />
         <div className='bar' />
       </div>
       <Banner>
@@ -130,7 +159,12 @@ export const CertificationCard: FC<{ cert: Certification }> = ({ cert }) => {
             <div className='cutout' />
           </div>
         </CertC>
-      </Banner>
+      </Banner>{' '}
+      {inProgress && (
+        <ProgressBanner>
+          <div>In Progress</div>
+        </ProgressBanner>
+      )}
     </Card>
   );
 };

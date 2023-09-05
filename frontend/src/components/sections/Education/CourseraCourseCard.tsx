@@ -4,14 +4,7 @@ import { ToLocaleDateString } from '../../../common/utils';
 import styled from 'styled-components';
 import { STRING_BREAKPOINTS } from '../../../common/constants';
 import LinkIcon from '@mui/icons-material/Link';
-
-const Card = styled.div`
-  direction: ltr;
-
-  background-color: ${props => props.theme.primary};
-  padding: 12px;
-  border-radius: 12px;
-`;
+import { ClassCard } from '../../../common/styles';
 
 const Title = styled.div`
   display: flex;
@@ -81,7 +74,7 @@ export const CourseraCourseCard: FC<{ course: CourseraCourse }> = ({ course }) =
   const { name, date, company, companyImage, credentialID, credentialURL } = course;
 
   return (
-    <Card>
+    <ClassCard>
       <Title>
         <Image title={company}>
           <img src={companyImage} alt={company + ' logo'} />
@@ -104,6 +97,6 @@ export const CourseraCourseCard: FC<{ course: CourseraCourse }> = ({ course }) =
         </a>
         <p>from Coursera</p>
       </Footer>
-    </Card>
+    </ClassCard>
   );
 };
