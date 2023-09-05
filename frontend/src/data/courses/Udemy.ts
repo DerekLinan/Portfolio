@@ -48,7 +48,7 @@ export const UDEMYCOURSES: UdemyCourses = {
     {
       id: 6,
       name: 'JavaScript: Understanding the Weird Parts',
-      date: new Date(2023, 9),
+      date: new Date(2022, 9),
       courseURL: new URL('https://www.udemy.com/course/understand-javascript/'),
     },
   ],
