@@ -126,10 +126,10 @@ const CourseContainer = styled.div`
   grid-template-rows: repeat(auto-fit, 135px);
   gap: 4px;
   overflow: auto;
-  overscroll-behavior: none;
   z-index: 1;
 
   @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
+    overscroll-behavior: none;
     display: flex;
     flex-direction: column;
     max-height: 42vh;

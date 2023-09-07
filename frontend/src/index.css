@@ -3,8 +3,8 @@ html {
   scroll-snap-type: y mandatory;
 }
 
-.navbar-margin {
-  margin-right: 5rem;
+section.navbar-margin {
+  margin-right: 6rem;
 }
 
 * {

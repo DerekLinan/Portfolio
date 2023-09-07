@@ -156,12 +156,14 @@ const LightStyle: React.CSSProperties = {
   color: '#ffa600',
   position: 'absolute',
   transform: 'translate(0, -15%)',
+  filter: 'drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4))',
 };
 
 const DarkStyle: React.CSSProperties = {
   pointerEvents: 'none',
   color: '#ddc95a',
   position: 'absolute',
+  filter: 'drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4))',
 };
 
 export const Navbar: FC<Props> = ({ isLightMode, toggleTheme }) => {
@@ -174,10 +176,16 @@ export const Navbar: FC<Props> = ({ isLightMode, toggleTheme }) => {
   }
 
   useEffect(() => {
+    const elements = document.getElementsByTagName('section');
+
     if (viewMode > ViewMode.Tablet && isOpen) {
-      document.getElementsByTagName('html')[0].classList.add('navbar-margin');
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.add('navbar-margin');
+      }
     } else {
-      document.getElementsByTagName('html')[0].classList.remove('navbar-margin');
+      for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.remove('navbar-margin');
+      }
     }
   }, [isOpen, viewMode]);
 
