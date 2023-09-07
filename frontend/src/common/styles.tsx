@@ -4,6 +4,9 @@ export const Section = styled.div`
   min-height: 100vh;
   color: ${props => props.theme.fg};
   background-color: ${props => props.theme.bg};
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 `;
 
 export const ClassCard = styled.div`

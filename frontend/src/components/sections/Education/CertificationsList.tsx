@@ -31,6 +31,7 @@ const CertificationList = styled.div`
   gap: 1rem;
   max-height: 100%;
   overflow: auto;
+  overscroll-behavior: none;
   & > div:first-of-type {
     margin-top: 8px;
   }

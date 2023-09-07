@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { STRING_BREAKPOINTS } from '../../../common/constants';
 
 const StyledEducation = styled(Section)`
-  margin: 1rem;
+  margin: 1rem 2rem;
   display: flex;
   flex-direction: column;
 
@@ -21,6 +21,7 @@ const StyledEducation = styled(Section)`
 
     @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
       flex-direction: column;
+      align-items: center;
     }
   }
 `;

@@ -23,6 +23,10 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-height: 90vh;
+
+  @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
+    margin-bottom: 1.25rem;
+  }
 `;
 
 const Header = styled.div`
@@ -122,12 +126,13 @@ const CourseContainer = styled.div`
   grid-template-rows: repeat(auto-fit, 135px);
   gap: 4px;
   overflow: auto;
+  overscroll-behavior: none;
   z-index: 1;
 
   @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
     display: flex;
     flex-direction: column;
-    max-height: 50vh;
+    max-height: 42vh;
     flex: 0 0 auto;
   }
 `;
