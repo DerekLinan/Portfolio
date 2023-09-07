@@ -2,6 +2,8 @@ import { FC } from 'react';
 import { Section } from '../../common/styles';
 import styled from 'styled-components';
 import { STRING_BREAKPOINTS } from '../../common/constants';
+import WebIcon from '@mui/icons-material/Web';
+import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import { VideogameAsset } from '@mui/icons-material';
 
 const Wrapper = styled(Section)`
@@ -189,10 +191,10 @@ export const BioSection: FC = () => {
       </Content>
       <Bubbles>
         <WebBubble>
-          <VideogameAsset />
+          <WebIcon />
         </WebBubble>
         <AppBubble>
-          <VideogameAsset />
+          <LaptopMacIcon />
         </AppBubble>
         <GameBubble>
           <VideogameAsset />
