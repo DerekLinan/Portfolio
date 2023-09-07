@@ -3,6 +3,10 @@ html {
   scroll-snap-type: y mandatory;
 }
 
+.navbar-margin {
+  margin-right: 5rem;
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   max-height: 90vh;
 
-  @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
+  @media (max-width: ${STRING_BREAKPOINTS.DESKTOP}) {
     max-height: fit-content;
   }
 
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
     margin-bottom: 8px;
     text-align: center;
 
-    @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
+    @media (max-width: ${STRING_BREAKPOINTS.DESKTOP}) {
       margin-bottom: 0.25rem;
     }
   }
@@ -36,7 +36,7 @@ const CertificationList = styled.div`
     margin-top: 8px;
   }
 
-  @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
+  @media (max-width: ${STRING_BREAKPOINTS.DESKTOP}) {
     align-items: center;
     max-height: 25vh;
     flex: 0 0 auto;

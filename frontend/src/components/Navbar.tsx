@@ -174,6 +174,14 @@ export const Navbar: FC<Props> = ({ isLightMode, toggleTheme }) => {
   }
 
   useEffect(() => {
+    if (viewMode > ViewMode.Tablet && isOpen) {
+      document.getElementsByTagName('html')[0].classList.add('navbar-margin');
+    } else {
+      document.getElementsByTagName('html')[0].classList.remove('navbar-margin');
+    }
+  }, [isOpen, viewMode]);
+
+  useEffect(() => {
     if (viewMode === ViewMode.Mobile) toggleMenu(false);
   }, [viewMode]);
 
