@@ -29,7 +29,6 @@ const StyledEducation = styled(Section)`
 export const EducationSection: FC = () => {
   return (
     <StyledEducation id='education'>
-      <h1>Education</h1>
       <div className='container'>
         <CertificationsList />
         <CoursesList />
