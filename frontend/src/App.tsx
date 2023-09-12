@@ -7,6 +7,7 @@ import { ContactSection } from './components/sections/Contact';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, defaultTheme } from './common/colors';
 import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
 
 function App() {
   const GlobalContext = createContext(ViewMode.Desktop);
@@ -30,7 +31,8 @@ function App() {
         <BioSection />
         <EducationSection />
         <ProjectsSection />
-        <ContactSection />
+        {/* <ContactSection /> */}
+        <Footer />
       </ThemeProvider>
     </GlobalContext.Provider>
   );

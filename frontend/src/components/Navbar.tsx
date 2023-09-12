@@ -233,12 +233,12 @@ export const Navbar: FC<Props> = ({ isLightMode, toggleTheme }) => {
           Projects
         </div>
       </NavButton>
-      <NavButton onClick={() => ScrollTo('contact')}>
+      {/* <NavButton onClick={() => ScrollTo('contact')}>
         <div>
           <Email />
           Contact
         </div>
-      </NavButton>
+      </NavButton> */}
       <NavLink href={URLS.GITHUB} target='_blank' rel='noopener noreferrer'>
         <div>
           <GitHub />
