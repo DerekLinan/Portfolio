@@ -8,6 +8,9 @@ const Card = styled(CertCard)`
   background-color: #e4eef1;
   position: relative;
 
+  &.has-link:hover {
+    cursor: pointer;
+  }
   > div:first-child {
     display: flex;
     flex-direction: column;
@@ -125,16 +128,18 @@ const ProgressBanner = styled.div`
   }
 `;
 
-export const CertificationCard: FC<{ cert: Certification; inProgress?: boolean }> = ({
+export const CertificationCard: FC<{ cert: Certification; inProgressLink?: URL }> = ({
   cert,
-  inProgress,
+  inProgressLink,
 }) => {
   const { name, date, issuer, image } = cert;
   return (
-    <Card>
+    <Card className={inProgressLink ? 'has-link' : ''}>
       <div>
         <div className='name-div'>{name}</div>
-        <div className='date-div'>{inProgress ? 'Not yet complete' : ToLocaleDateString(date)}</div>
+        <div className='date-div'>
+          {inProgressLink ? 'Not yet complete' : ToLocaleDateString(date)}
+        </div>
         <div className='issuer-div'>{issuer}</div>
         <div
           className='bar'
@@ -159,8 +164,8 @@ export const CertificationCard: FC<{ cert: Certification; inProgress?: boolean }
             <div className='cutout' />
           </div>
         </CertC>
-      </Banner>{' '}
-      {inProgress && (
+      </Banner>
+      {inProgressLink && (
         <ProgressBanner>
           <div>In Progress</div>
         </ProgressBanner>

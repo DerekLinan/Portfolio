@@ -4,5 +4,5 @@ export type Certification = {
   date: Date;
   issuer: string;
   image: string;
-  inProgress?: boolean;
+  inProgressLink?: URL;
 };

@@ -49,7 +49,7 @@ export const CertificationsList: FC = () => {
       <h2>Certifications</h2>
       <CertificationList>
         {CERTIFICATIONS.coursera.map(cert => (
-          <CertificationCard key={cert.id} cert={cert} inProgress={cert.inProgress} />
+          <CertificationCard key={cert.id} cert={cert} inProgressLink={cert.inProgressLink} />
         ))}
         <AppDevCertCard />
       </CertificationList>

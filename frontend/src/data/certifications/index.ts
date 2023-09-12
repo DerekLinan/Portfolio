@@ -16,7 +16,9 @@ export const CERTIFICATIONS = {
       date: new Date(),
       issuer: 'IBM',
       image: '',
-      inProgress: true,
+      inProgressLink: new URL(
+        'https://www.coursera.org/professional-certificates/ibm-backend-development?skipBrowseRedirect=true',
+      ),
     },
   ] as Certification[],
 };
