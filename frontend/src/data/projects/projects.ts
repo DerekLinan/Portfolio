@@ -41,8 +41,8 @@ export const ALLPROJECTS: Project[] = [
   },
   {
     name: 'Crop Management System',
-    brief: `Medium-sized full-stack application. It acts as the business's centralized hub for managing employees, farms, customers, etc.`,
-    imagefile: '',
+    brief: `Medium-sized full-stack application built with a team of 5 developers. It acts as the business's centralized hub for managing employees, farms, customers, etc.`,
+    imagefile: 'cms.ico',
     tags: [
       Tags.TS,
       Tags.React,
@@ -57,7 +57,7 @@ export const ALLPROJECTS: Project[] = [
       Tags.PostgreSQL,
       Tags.TypeORM,
     ],
-    description: `Medium-sized full-stack application. It acts as the business's centralized hub for managing employees, farms, customers, etc.`,
+    description: `Medium-sized full-stack application built with a team of 5 developers. It acts as the business's centralized hub for managing employees, farms, customers, etc.`,
     unavailableReason: `Private company's project`,
   },
   {
