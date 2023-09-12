@@ -61,6 +61,7 @@ const InfoBlock = styled.div`
   border-bottom: none;
   border-left: none;
   border-right: none;
+  border-top-right-radius: ${borderRadius};
 
   position: relative;
   background-color: ${props => props.theme.primary};
@@ -74,7 +75,6 @@ const InfoBlock = styled.div`
 const Links = styled.div`
   ${borderStyle}
   border-bottom: none;
-  /* border-left: none; */
   border-top-right-radius: ${borderRadius};
   border-top-left-radius: ${borderRadius};
 
