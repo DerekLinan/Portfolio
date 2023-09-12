@@ -14,12 +14,12 @@ export type Theme = {
 
 export const defaultTheme: Theme = {
   name: THEMES[0],
-  primary: '#0657a3',
-  primaryAlt: '#0084ff',
+  primary: '#0763b9',
+  primaryAlt: '#128cfd',
   secondary: '#095e5e',
   secondaryAlt: '#049b9b',
-  accent: '#728d94',
-  accentAlt: '#9dbfc7',
+  accent: '#c49642',
+  accentAlt: '#ddc95a',
   fg: 'black',
   bg: 'white',
 };

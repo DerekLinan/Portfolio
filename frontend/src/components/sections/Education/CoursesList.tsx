@@ -132,7 +132,7 @@ const CourseContainer = styled.div`
     overscroll-behavior: none;
     display: flex;
     flex-direction: column;
-    max-height: 42vh;
+    max-height: 46vh;
     flex: 0 0 auto;
   }
 `;
