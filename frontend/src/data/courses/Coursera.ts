@@ -37,5 +37,15 @@ export const COURSERACOURSES: CourseraCourses = {
       credentialID: 'YKXJ969J674F',
       credentialURL: new URL('https://coursera.org/share/3f0aeda170a8981f013b42ac45bdb9b7'),
     },
+    {
+      name: 'Python for Data Science, AI & Development',
+      date: new Date(2023, 8, 16),
+      company: 'IBM',
+      companyImage: 'ibm-logo.svg',
+      credentialID: '662H9B7NDC6V',
+      credentialURL: new URL(
+        'https://www.coursera.org/account/accomplishments/certificate/662H9B7NDC6V',
+      ),
+    },
   ],
 };
