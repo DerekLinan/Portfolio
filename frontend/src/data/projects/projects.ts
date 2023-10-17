@@ -1,15 +1,16 @@
 export type Project = {
   name: string;
   brief: string;
-  imagefile: string;
+  imagefile: string | string[];
   tags: Tags[];
   description?: string;
-  liveSiteURL?: URL;
+  liveSiteURL?: string | URL;
   codeURL?: URL;
   unavailableReason?: string;
 };
 
 export enum Tags {
+  JS = 'Javascript',
   TS = 'Typescript',
   React = 'ReactJS',
   Next = 'NextJS',
@@ -26,13 +27,23 @@ export enum Tags {
   Tailwind = 'Tailwind',
   Unity = 'Unity',
   CSharp = 'C#',
+  Webpack = 'Webpack',
 }
 
 export const ALLPROJECTS: Project[] = [
   {
+    name: 'Free Youtube Downloader',
+    brief: 'A browser extension to easily and quickly download youtube videos.',
+    imagefile: ['fyd-2.png', 'fyd-1.png'],
+    tags: [Tags.JS, Tags.Webpack],
+    description: '',
+    liveSiteURL: 'In Development',
+    codeURL: new URL('https://github.com/DerekLinan/free-youtube-downloader/tree/main'),
+  },
+  {
     name: 'Remote Games',
     brief:
-      'Remote games is a hobby website designed to host the various games I make as they are developed. ',
+      'Remote games is a hobby website designed to host the various games I make as they are developed.',
     imagefile: 'jeoparty.png',
     tags: [Tags.TS, Tags.React, Tags.Next, Tags.Tailwind],
     description: '',
@@ -67,14 +78,5 @@ export const ALLPROJECTS: Project[] = [
     tags: [Tags.TS, Tags.React, Tags.Styled],
     description: '',
     codeURL: new URL('https://github.com/DerekLinan/Portfolio'),
-  },
-  {
-    name: 'Slap Trap Tap',
-    brief:
-      'A single and multiplayer card game expected to release on Steam and other platforms in 2025.',
-    imagefile: '',
-    tags: [Tags.Unity, Tags.CSharp],
-    description: '',
-    unavailableReason: 'In Alpha',
   },
 ];
