@@ -47,5 +47,15 @@ export const COURSERACOURSES: CourseraCourses = {
         'https://www.coursera.org/account/accomplishments/certificate/662H9B7NDC6V',
       ),
     },
+    {
+      name: 'Developing AI Applications with Python and Flask',
+      date: new Date(2023, 9, 21),
+      company: 'IBM',
+      companyImage: 'ibm-logo.svg',
+      credentialID: 'N6ZXZV3WXR72',
+      credentialURL: new URL(
+        'https://www.coursera.org/account/accomplishments/certificate/N6ZXZV3WXR72',
+      ),
+    },
   ],
 };
