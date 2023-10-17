@@ -3,10 +3,12 @@ import styled, { css } from 'styled-components';
 import { Project } from '../../../data/projects/projects';
 import { ProjectCardLinks } from './ProjectCardLinks';
 import { ProjectTag } from './ProjectTag';
+import { ProjectImageCarousel } from './ProjectImageCarousel';
 
 type Props = {
   project: Project;
 };
+
 const borderThickness = '2px';
 const borderStyle = css`
   border: ${borderThickness} solid ${props => props.theme.fg};
@@ -133,7 +135,11 @@ export const ProjectCard: FC<Props> = ({ project }) => {
       <div>
         <TitleBlock>{name}</TitleBlock>
         {imagefile ? (
-          <img src={imagefile} alt={`image of ${name}`} />
+          Array.isArray(imagefile) ? (
+            <ProjectImageCarousel images={imagefile} name={name} />
+          ) : (
+            <img src={imagefile} alt={`image of ${name}`} />
+          )
         ) : (
           <div className='no-image'>
             <p>No image yet</p>
