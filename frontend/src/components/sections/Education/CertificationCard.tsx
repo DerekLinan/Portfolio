@@ -8,9 +8,6 @@ const Card = styled(CertCard)`
   background-color: #e4eef1;
   position: relative;
 
-  &.has-link:hover {
-    cursor: pointer;
-  }
   > div:first-child {
     display: flex;
     flex-direction: column;
@@ -133,43 +130,52 @@ export const CertificationCard: FC<{ cert: Certification; inProgressLink?: URL }
   inProgressLink,
 }) => {
   const { name, date, issuer, image } = cert;
+  console.log(image ?? inProgressLink?.href);
   return (
-    <Card className={inProgressLink ? 'has-link' : ''}>
-      <div>
-        <div className='name-div'>{name}</div>
-        <div className='date-div'>
-          {inProgressLink ? 'Not yet complete' : ToLocaleDateString(date)}
+    <a
+      href={image ? image : inProgressLink?.href}
+      target='_blank'
+      rel='noreferrer'
+      title='view certificate (new tab)'
+      style={{ textDecoration: 'none' }}
+    >
+      <Card>
+        <div>
+          <div className='name-div'>{name}</div>
+          <div className='date-div'>
+            {inProgressLink ? 'Not yet complete' : ToLocaleDateString(date)}
+          </div>
+          <div className='issuer-div'>{issuer}</div>
+          <div
+            className='bar'
+            style={{
+              marginBottom: '0',
+              marginRight: '5rem',
+              marginLeft: '1.5rem',
+            }}
+          />
+          <div className='bar' />
         </div>
-        <div className='issuer-div'>{issuer}</div>
-        <div
-          className='bar'
-          style={{
-            marginBottom: '0',
-            marginRight: '5rem',
-            marginLeft: '1.5rem',
-          }}
-        />
-        <div className='bar' />
-      </div>
-      <Banner>
-        <div />
-        <CertC>
-          <div>
-            <div className='top' />
-          </div>
-          <div>
-            <div className='bottom' />
-          </div>
-          <div>
-            <div className='cutout' />
-          </div>
-        </CertC>
-      </Banner>
-      {inProgressLink && (
-        <ProgressBanner>
-          <div>In Progress</div>
-        </ProgressBanner>
-      )}
-    </Card>
+        <Banner>
+          <div />
+          <CertC>
+            <div>
+              <div className='top' />
+            </div>
+            <div>
+              <div className='bottom' />
+            </div>
+            <div>
+              <div className='cutout' />
+            </div>
+          </CertC>
+        </Banner>
+        {inProgressLink && (
+          <ProgressBanner>
+            <div>In Progress</div>
+          </ProgressBanner>
+        )}
+      </Card>
+    </a>
   );
 };
