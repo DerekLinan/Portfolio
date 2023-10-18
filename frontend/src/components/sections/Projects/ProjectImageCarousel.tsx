@@ -13,6 +13,7 @@ const Wrapper = styled.div`
 
 const buttonStyle = css`
   background-color: ${props => props.theme.accent};
+  opacity: 75%;
   position: absolute;
   top: 40%;
   aspect-ratio: 1;
@@ -22,6 +23,7 @@ const buttonStyle = css`
 
   &:hover {
     background-color: ${props => props.theme.accentAlt};
+    opacity: 100%;
   }
 
   &:active {
