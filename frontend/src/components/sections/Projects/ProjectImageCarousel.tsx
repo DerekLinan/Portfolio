@@ -68,6 +68,14 @@ const ScrollBar = styled.div`
     width: 0.8rem;
     background-color: ${props => props.theme.primary};
   }
+
+  div.pointer {
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(80%);
+    }
+  }
 `;
 
 export const ProjectImageCarousel: FC<Props> = ({ images, name }) => {
@@ -91,7 +99,19 @@ export const ProjectImageCarousel: FC<Props> = ({ images, name }) => {
       </RScroll>
       <ScrollBar>
         {images.map((image, imageIndex) => (
-          <div key={image} className={currentIndex === imageIndex ? 'active' : ''} />
+          <div
+            {...(currentIndex === imageIndex
+              ? {
+                  className: 'active',
+                }
+              : {
+                  className: 'pointer',
+                  onClick: () => {
+                    setIndex(imageIndex);
+                  },
+                })}
+            key={image}
+          />
         ))}
       </ScrollBar>
       <img src={images[currentIndex]} alt={`image of ${name}`} />
