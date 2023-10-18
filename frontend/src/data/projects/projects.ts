@@ -33,7 +33,8 @@ export enum Tags {
 export const ALLPROJECTS: Project[] = [
   {
     name: 'Free Youtube Downloader',
-    brief: 'A browser extension to easily and quickly download youtube videos.',
+    brief:
+      'A browser extension to easily and quickly download youtube videos.\n\n*Currently in development',
     imagefile: ['fyd-2.png', 'fyd-1.png'],
     tags: [Tags.JS, Tags.Webpack],
     description: '',

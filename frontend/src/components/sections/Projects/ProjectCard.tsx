@@ -119,6 +119,10 @@ const Links = styled.div`
   }
 `;
 
+const Brief = styled.div`
+  white-space: pre-wrap;
+`;
+
 const Tags = styled.div`
   display: flex;
   padding: 0.5rem;
@@ -153,7 +157,7 @@ export const ProjectCard: FC<Props> = ({ project }) => {
               <ProjectCardLinks siteURL={liveSiteURL} codeURL={codeURL} />
             )}
           </Links>
-          <div>{brief}</div>
+          <Brief>{brief}</Brief>
           <Tags>
             {tags
               .sort((a, b) => a.toString().localeCompare(b.toString()))
