@@ -35,7 +35,7 @@ export const ALLPROJECTS: Project[] = [
     name: 'Free Youtube Downloader',
     brief:
       'A browser extension to easily and quickly download youtube videos.\n\n*Currently in development',
-    imagefile: ['fyd-2.png', 'fyd-1.png'],
+    imagefile: ['fyd-2.png', 'fyd-1.png', 'fyd-3.png'],
     tags: [Tags.JS, Tags.Webpack],
     description: '',
     liveSiteURL: 'In Development',
