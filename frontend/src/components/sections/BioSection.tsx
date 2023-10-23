@@ -55,7 +55,7 @@ const Splash = styled.div`
     margin-bottom: 2rem;
     padding: 1rem;
     font-size: 5rem;
-    text-shadow: #fc0 2px 0 1px;
+    text-shadow: ${props => props.theme.splash} 2px 0 1px;
 
     background-color: ${props => props.theme.secondary};
     background: linear-gradient(
@@ -130,7 +130,7 @@ const UnderlayBot = styled.div`
 `;
 
 const Bubble = styled.div`
-  background-color: #fc0;
+  background-color: ${props => props.theme.splash};
   box-shadow: inset 2px 1px ${props => props.theme.secondaryAlt};
   border-radius: 50%;
   height: 6rem;

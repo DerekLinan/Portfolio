@@ -10,6 +10,7 @@ export type Theme = {
   accentAlt: string;
   fg: string;
   bg: string;
+  splash: string;
 };
 
 export const defaultTheme: Theme = {
@@ -22,6 +23,7 @@ export const defaultTheme: Theme = {
   accentAlt: '#ddc95a',
   fg: 'black',
   bg: 'white',
+  splash: '#fc0',
 };
 
 export const darkTheme: Theme = {
@@ -34,4 +36,5 @@ export const darkTheme: Theme = {
   accentAlt: '#c49642',
   fg: 'white',
   bg: 'black',
+  splash: '#fc0',
 };
