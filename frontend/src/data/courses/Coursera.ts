@@ -49,12 +49,22 @@ export const COURSERACOURSES: CourseraCourses = {
     },
     {
       name: 'Developing AI Applications with Python and Flask',
-      date: new Date(2023, 9, 21),
+      date: new Date(2023, 8, 21),
       company: 'IBM',
       companyImage: 'ibm-logo.svg',
       credentialID: 'N6ZXZV3WXR72',
       credentialURL: new URL(
         'https://www.coursera.org/account/accomplishments/certificate/N6ZXZV3WXR72',
+      ),
+    },
+    {
+      name: 'Django Application Development with SQL and Databases',
+      date: new Date(2023, 9, 23),
+      company: 'IBM',
+      companyImage: 'ibm-logo.svg',
+      credentialID: '2SDL29SEJ9U3',
+      credentialURL: new URL(
+        'https://www.coursera.org/account/accomplishments/certificate/2SDL29SEJ9U3',
       ),
     },
   ],
