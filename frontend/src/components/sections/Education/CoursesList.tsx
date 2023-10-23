@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  max-height: 90vh;
+  margin-bottom: 2rem;
 
   @media (max-width: ${STRING_BREAKPOINTS.TABLET}) {
     margin-bottom: 1.25rem;
@@ -117,7 +117,6 @@ const CourseBorder = styled.div`
 `;
 
 const CourseContainer = styled.div`
-  margin-bottom: auto;
   flex: 1 1 0;
 
   padding: 0 10px;
