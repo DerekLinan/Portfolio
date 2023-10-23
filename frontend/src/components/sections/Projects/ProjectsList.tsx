@@ -6,11 +6,11 @@ import { STRING_BREAKPOINTS } from '../../../common/constants';
 
 const List = styled.div`
   flex: 1 1 0;
-  margin: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   grid-template-rows: auto;
-  padding: 0 1rem;
   gap: 1rem;
   overflow: auto;
 

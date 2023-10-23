@@ -5,7 +5,7 @@ import { ProjectsList } from './ProjectsList';
 
 const StyledSection = styled(Section)`
   max-width: 1080;
-  margin: 0 auto;
+  margin: 1rem 3rem;
   display: flex;
   flex-direction: column;
 
