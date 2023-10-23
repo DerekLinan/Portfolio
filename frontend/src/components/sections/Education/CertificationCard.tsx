@@ -130,7 +130,7 @@ export const CertificationCard: FC<{ cert: Certification; inProgressLink?: URL }
   inProgressLink,
 }) => {
   const { name, date, issuer, image } = cert;
-  console.log(image ?? inProgressLink?.href);
+
   return (
     <a
       href={image ? image : inProgressLink?.href}
