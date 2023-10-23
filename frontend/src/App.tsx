@@ -6,7 +6,7 @@ import { EducationSection } from './components/sections/Education/EducationSecti
 import { ContactSection } from './components/sections/Contact';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme, defaultTheme } from './common/colors';
-import { Navbar } from './components/Navbar';
+import { Navbar } from './components/Navbar/Navbar';
 import { Footer } from './components/Footer';
 
 function App() {

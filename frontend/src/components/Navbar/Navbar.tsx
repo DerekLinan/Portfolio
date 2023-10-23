@@ -13,10 +13,10 @@ import {
   KeyboardArrowLeft,
   Remove,
 } from '@mui/icons-material';
-import { ScrollTo } from '../common/utils';
-import { URLS } from '../common/constants';
+import { ScrollTo } from '../../common/utils';
+import { URLS } from '../../common/constants';
 import { Switch } from '@mui/material';
-import { ViewMode, useViewMode } from '../hooks/useViewMode';
+import { ViewMode, useViewMode } from '../../hooks/useViewMode';
 
 type Props = {
   isLightMode: boolean;
