@@ -1,7 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { useViewMode, ViewMode } from './hooks/useViewMode';
 import { ProjectsSection } from './components/sections/Projects/ProjectsSection';
-import { BioSection } from './components/sections/BioSection';
+import { BioSection } from './components/sections/Bio/BioSection';
 import { EducationSection } from './components/sections/Education/EducationSection';
 import { ContactSection } from './components/sections/Contact';
 import { ThemeProvider } from 'styled-components';

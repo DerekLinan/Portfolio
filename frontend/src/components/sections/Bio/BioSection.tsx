@@ -1,10 +1,12 @@
 import { FC } from 'react';
-import { Section } from '../../common/styles';
+import { Section } from '../../../common/styles';
 import styled from 'styled-components';
-import { STRING_BREAKPOINTS } from '../../common/constants';
+import { STRING_BREAKPOINTS } from '../../../common/constants';
 import WebIcon from '@mui/icons-material/Web';
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import { VideogameAsset } from '@mui/icons-material';
+import { motion } from 'framer-motion';
+import { bubbleAnimation, listAnim, splashItem, underlay } from './BioAnimations';
 
 const Wrapper = styled(Section)`
   margin-right: 0 !important;
@@ -15,14 +17,14 @@ const Wrapper = styled(Section)`
   justify-content: space-between;
 `;
 
-const Content = styled.div`
+const Content = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
 
-const UnderlayTop = styled.div`
+const UnderlayTop = styled(motion.div)`
   background-color: ${props => props.theme.bg};
   box-shadow: 2px 1px 10px ${props => props.theme.secondaryAlt};
   background: linear-gradient(
@@ -43,7 +45,7 @@ const UnderlayTop = styled.div`
   border-radius: 50%;
 `;
 
-const Splash = styled.div`
+const Splash = styled(motion.div)`
   z-index: 3;
   padding: 6rem 0 0 6rem;
 
@@ -108,7 +110,7 @@ const Splash = styled.div`
   }
 `;
 
-const UnderlayBot = styled.div`
+const UnderlayBot = styled(motion.div)`
   background-color: ${props => props.theme.bg};
   box-shadow: inset 2px 10px 10px ${props => props.theme.secondaryAlt};
   background: linear-gradient(
@@ -129,7 +131,7 @@ const UnderlayBot = styled.div`
   border-radius: 50%;
 `;
 
-const Bubble = styled.div`
+const Bubble = styled(motion.div)`
   background-color: ${props => props.theme.splash};
   box-shadow: inset 2px 1px ${props => props.theme.secondaryAlt};
   border-radius: 50%;
@@ -167,7 +169,7 @@ const GameBubble = styled(Bubble)`
   top: 10vh;
 `;
 
-const Bubbles = styled.div`
+const Bubbles = styled(motion.div)`
   display: flex;
   justify-content: space-evenly;
   z-index: 2;
@@ -177,26 +179,26 @@ const Bubbles = styled.div`
 export const BioSection: FC = () => {
   return (
     <Wrapper id='bio'>
-      <Content>
-        <UnderlayTop />
-        <UnderlayBot />
-        <Splash>
-          <h2>Derek Linan</h2>
-          <ul>
-            <li>Full-stack Web Development</li>
-            <li>Application Engineering</li>
-            <li>Game Programming</li>
-          </ul>
+      <Content initial='hidden' animate='visible' variants={listAnim}>
+        <UnderlayTop variants={underlay} />
+        <UnderlayBot variants={underlay} />
+        <Splash initial='hidden' animate='visible' variants={listAnim}>
+          <motion.h2 variants={splashItem}>Derek Linan</motion.h2>
+          <motion.ul variants={listAnim}>
+            <motion.li variants={splashItem}>Full-stack Web Development</motion.li>
+            <motion.li variants={splashItem}>Application Engineering</motion.li>
+            <motion.li variants={splashItem}>Game Programming</motion.li>
+          </motion.ul>
         </Splash>
       </Content>
-      <Bubbles>
-        <WebBubble>
+      <Bubbles initial='hidden' animate='visible' variants={listAnim}>
+        <WebBubble variants={bubbleAnimation(20, -20)}>
           <WebIcon />
         </WebBubble>
-        <AppBubble>
+        <AppBubble variants={bubbleAnimation(0, -20)}>
           <LaptopMacIcon />
         </AppBubble>
-        <GameBubble>
+        <GameBubble variants={bubbleAnimation(-20, -20)}>
           <VideogameAsset />
         </GameBubble>
       </Bubbles>

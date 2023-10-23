@@ -28,6 +28,7 @@ export enum Tags {
   Unity = 'Unity',
   CSharp = 'C#',
   Webpack = 'Webpack',
+  Framer = 'Framer Motion',
 }
 
 export const ALLPROJECTS: Project[] = [
@@ -76,7 +77,7 @@ export const ALLPROJECTS: Project[] = [
     name: 'Portfolio',
     brief: 'My portfolio! Thanks for checking it out 👍',
     imagefile: 'portfolio.png',
-    tags: [Tags.TS, Tags.React, Tags.Styled],
+    tags: [Tags.TS, Tags.React, Tags.Styled, Tags.Framer],
     description: '',
     codeURL: new URL('https://github.com/DerekLinan/Portfolio'),
   },
