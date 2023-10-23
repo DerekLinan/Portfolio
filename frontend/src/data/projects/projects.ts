@@ -1,3 +1,5 @@
+import { Tags } from './tags';
+
 export type Project = {
   name: string;
   brief: string;
@@ -8,28 +10,6 @@ export type Project = {
   codeURL?: URL;
   unavailableReason?: string;
 };
-
-export enum Tags {
-  JS = 'Javascript',
-  TS = 'Typescript',
-  React = 'ReactJS',
-  Next = 'NextJS',
-  Nest = 'NestJS',
-  Chai = 'Chai',
-  Mocha = 'Mocha',
-  Styled = 'Styled Components',
-  Bootstrap = 'Bootstrap',
-  HookForms = 'React Hook Forms',
-  Yup = 'Yup',
-  Swagger = 'Swagger',
-  TypeORM = 'TypeORM',
-  PostgreSQL = 'PostgreSQL',
-  Tailwind = 'Tailwind',
-  Unity = 'Unity',
-  CSharp = 'C#',
-  Webpack = 'Webpack',
-  Framer = 'Framer Motion',
-}
 
 export const ALLPROJECTS: Project[] = [
   {

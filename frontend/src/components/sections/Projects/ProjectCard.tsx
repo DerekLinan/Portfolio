@@ -162,7 +162,7 @@ export const ProjectCard: FC<Props> = ({ project }) => {
             {tags
               .sort((a, b) => a.toString().localeCompare(b.toString()))
               .map(tag => (
-                <ProjectTag key={tag} tag={tag} />
+                <ProjectTag key={tag} tag={tag} project={name} />
               ))}
           </Tags>
         </InfoBlock>
