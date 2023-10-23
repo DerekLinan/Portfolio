@@ -53,13 +53,24 @@ const ScrollBar = styled.div`
   bottom: 16px;
   right: 16px;
   padding: 4px 8px;
-  border-radius: 8px;
-  background-color: ${props => props.theme.fg};
   display: flex;
   align-items: center;
   gap: 8px;
 
+  &::before {
+    content: '';
+    border-radius: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: ${props => props.theme.fg};
+    opacity: 80%;
+  }
+
   div {
+    z-index: 1;
     width: 0.6rem;
     aspect-ratio: 1;
     border-radius: 50%;
